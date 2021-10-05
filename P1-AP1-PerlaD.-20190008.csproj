@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="DAL\" />
-    <Folder Include="Entidades\" />
     <Folder Include="DATA\" />
     <Folder Include="UI\Registro\" />
   </ItemGroup>
