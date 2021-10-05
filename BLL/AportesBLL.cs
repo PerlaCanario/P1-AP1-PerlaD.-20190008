@@ -19,14 +19,15 @@ namespace P1_AP1_PerlaD._20190008.BLL
             else
                 return Editar(aportes);
         }
-        private static bool Insertar(Aportes aportes)
+        private static bool Insertar(Aportes aporte)
         {
             bool paso = false;
-            Aportes aporte = new Aportes();
+            Contexto contexto = new Contexto();
+
             try
             {
-                aportes.Aporte.Add(aportes);
-                paso = aporte.SaveChanges() > 0;
+                Contexto.Aportes.Add(aporte);
+                paso = Contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
