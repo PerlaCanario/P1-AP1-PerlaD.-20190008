@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using P1_AP1_PerlaD._20190008.UI.Registro;
 namespace P1_AP1_PerlaD._20190008
 {
     /// <summary>
@@ -23,6 +23,17 @@ namespace P1_AP1_PerlaD._20190008
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void rAportes_Click(object sender, RoutedEventArgs e)
+        {
+            rAportes rAportes = new rAportes();
+            rAportes.Show();
+        }
+
+        private void cAportes_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
