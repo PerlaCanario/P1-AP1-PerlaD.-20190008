@@ -26,8 +26,8 @@ namespace P1_AP1_PerlaD._20190008.BLL
 
             try
             {
-                Contexto.Aportes.Add(aporte);
-                paso = Contexto.SaveChanges() > 0;
+                contexto.Aportes.Add(aporte);
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
@@ -35,7 +35,7 @@ namespace P1_AP1_PerlaD._20190008.BLL
             }
             finally
             {
-                Contexto.Dispose();
+                contexto.Dispose();
             }
             return paso;
         }

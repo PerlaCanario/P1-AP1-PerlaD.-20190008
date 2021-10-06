@@ -25,20 +25,21 @@ namespace P1_AP1_PerlaD._20190008.UI.Consulta
         {
             InitializeComponent();
         }
-        private void ConsultarButton_Click(object sender, RoutedEventArgs e)
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             var listado = new List<Aportes>();
 
             if (CriterioTextBox.Text.Trim().Length > 0)
             {
-                switch (FiltroComboBox.SelectedIndex)
+                switch (FiltroComBox.SelectedIndex)
                 {
                     case 0:
-                        listado = AportesBLL.GetList(e => e.AportesId == Convert.ToInt32(CriterioTextBox.Text));
+                        listado = AportesBLL.GetList(e => e.Persona.ToLower().Contains(CriterioTextBox.Text.ToLower()));
                         break;
 
                     case 1:
-                        listado = AportesBLL.GetList(e => e.Persona.Contains(CriterioTextBox.Text));
+                        listado = AportesBLL.GetList(e => e.Concepto.ToLower().Contains(CriterioTextBox.Text.ToLower()));
                         break;
                 }
             }
@@ -46,9 +47,21 @@ namespace P1_AP1_PerlaD._20190008.UI.Consulta
             {
                 listado = AportesBLL.GetList(c => true);
             }
+            if (DesdeDataPicker.SelectedDate != null)
+                listado = AportesBLL.GetList(c => c.Fecha.Date >= DesdeDataPicker.SelectedDate);
+
+            if (HastaDataPicker.SelectedDate != null)
+                listado = AportesBLL.GetList(c => c.Fecha.Date <= HastaDataPicker.SelectedDate);
 
             AportesDataGrid.ItemsSource = null;
             AportesDataGrid.ItemsSource = listado;
+
+            var Conteo = listado.Count();
+            ConteoTextBox.Text = Conteo.ToString();
+
+            var Total = listado.Sum(x => x.Monto);
+            TotalTextBox.Text = Total.ToString();
         }
+
     }
 }

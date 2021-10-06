@@ -10,7 +10,7 @@
         <StackPanel Margin="20,0,0,131">
             <Label Content="Aportes id:" Height="30" />
             <StackPanel Height="19" Orientation="Horizontal" Width="397">
-                <TextBox HorizontalAlignment="Left" x:Name="AportesIdTextBox"  Width="120" Text="{Binding CiudadId}"/>
+                <TextBox HorizontalAlignment="Left" x:Name="AportesIdTextBox"  Width="120" Text="{Binding AportesId}"/>
                 <Button x:Name="BuscarButton" FlowDirection="LeftToRight" Click="BuscarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Resources/Buscar.png" Height="10"/>

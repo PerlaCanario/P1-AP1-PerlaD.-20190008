@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using P1_AP1_PerlaD._20190008.UI.Consulta;
 using P1_AP1_PerlaD._20190008.UI.Registro;
 namespace P1_AP1_PerlaD._20190008
 {
@@ -33,7 +34,8 @@ namespace P1_AP1_PerlaD._20190008
 
         private void cAportes_Click(object sender, RoutedEventArgs e)
         {
-
+            cAportes consulta = new cAportes();
+            consulta.Show();
         }
     }
 }

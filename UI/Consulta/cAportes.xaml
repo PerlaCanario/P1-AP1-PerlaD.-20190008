@@ -5,44 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:P1_AP1_PerlaD._20190008.UI.Consulta"
         mc:Ignorable="d"
-        Title="cAportes" Height="450" Width="800">
-    <Grid>
-        <StackPanel Orientation="Vertical" Margin="10,5,10,0">
-            <StackPanel Orientation="Horizontal" Height="150">
-                <StackPanel Margin="5,0">
-                    <Label Content="Desde"/>
-                    <DatePicker x:Name="DesdeDataPicker" SelectedDate="{Binding Desde}" HorizontalAlignment="Left" Width="150"  SelectedDateFormat="Short"/>
-                </StackPanel>
-                <StackPanel Margin="10,0">
-                    <Label Content="Hasta"/>
-                    <DatePicker x:Name="HastaDataPicker" SelectedDate="{Binding Hasta}" HorizontalAlignment="Left" Width="150"  SelectedDateFormat="Short"/>
-                </StackPanel>
-                <StackPanel Margin="-310,50">
-                    <Label Content="Filtro:"/>
-                    <ComboBox x:Name="FiltroComboBox" HorizontalAlignment="Left" Width="100" Height="25">
-                        <ComboBoxItem Content="Persona"/>
-                        <ComboBoxItem Content="Concepto"/>
-                    </ComboBox>
-                </StackPanel>
+        Title="cAportes" Height="572" Width="659">
+    <Grid Margin="10,0,0,52" >
 
-                <StackPanel Margin="-200,50">
-                    <Label Content="Critero:"/>
-                    <TextBox x:Name="CriterioTextBox" HorizontalAlignment="Left" Width="100" Height="25"/>
-                </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,0,496,236">
 
-                <Button x:Name="BuscarButton" Height="30" Width="85" Margin="0,20,0,0" Click="ConsultarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Width="10" Height="10" Source="/Resources/Buscar.png"/>
-                        <Label Content="Buscar"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
+            <Label Content="Desde"  Width="42" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <DatePicker x:Name="DesdeDataPicker" Width="150" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+            <Label Content="Hasta" Height="28" VerticalAlignment="Top" Width="43" HorizontalAlignment="Left" />
+            <DatePicker x:Name="HastaDataPicker" Width="150"   Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Margin="158,0,345,365">
+            <Label Content="Filtro" Width="41" HorizontalAlignment="Left" Height="24"/>
+            <ComboBox x:Name="FiltroComBox" Width="142" Height="25" HorizontalAlignment="Left" Margin="0,5,0,0">
+                <ComboBoxItem Content="Persona"/>
+                <ComboBoxItem Content="Concepto"/>
+            </ComboBox>
+            <Button x:Name="BuscarButton" Content="Buscar" Margin="0,23,0,0" Width="91" HorizontalAlignment="Center" Height="43" Click="BuscarButton_Click"/>
 
-            <StackPanel HorizontalAlignment="Left">
-                <DataGrid x:Name="AportesDataGrid" Height="200" Width="527"/>
-            </StackPanel>
-            
+        </StackPanel>
+        <StackPanel Margin="309,6,204,430">
+            <Label Content="Criterio" Width="54" HorizontalAlignment="Left"/>
+            <TextBox x:Name="CriterioTextBox"  Width="131" HorizontalAlignment="Left" Height="21"/>
         </StackPanel>
 
+        <DataGrid x:Name="AportesDataGrid" AutoGenerateColumns="False" Margin="10,150,32,89">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Aportes id" Binding="{Binding AportesId}"/>
+                <DataGridTextColumn Header="Fecha del aporte" Binding="{Binding Fecha}"/>
+                <DataGridTextColumn Header="Persona" Binding="{Binding Persona }"/>
+                <DataGridTextColumn Header="Concepto" Binding="{Binding Concepto}"/>
+                <DataGridTextColumn Header="Monto" Binding="{Binding Monto}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Orientation="Horizontal" Margin="14,437,322,35" >
+            <Label Content="Conteo: " VerticalAlignment="Top"/>
+            <TextBox x:Name="ConteoTextBox"  Width="100" Height="26" VerticalAlignment="Top"/>
+            <Label Content="Total: "/>
+            <TextBox x:Name="TotalTextBox"  Width="100" Height="26" VerticalAlignment="Top"/>
+
+        </StackPanel>
     </Grid>
 </Window>
