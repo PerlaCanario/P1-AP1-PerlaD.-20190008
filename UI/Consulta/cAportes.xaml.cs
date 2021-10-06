@@ -47,8 +47,8 @@ namespace P1_AP1_PerlaD._20190008.UI.Consulta
             {
                 listado = AportesBLL.GetList(c => true);
             }
-            if (DesdeDataPicker.SelectedDate != null)
-                listado = AportesBLL.GetList(c => c.Fecha.Date >= DesdeDataPicker.SelectedDate);
+            if (DesdeDatePicker.SelectedDate != null)
+                listado = AportesBLL.GetList(c => c.Fecha.Date >= DesdeDatePicker.SelectedDate);
 
             if (HastaDataPicker.SelectedDate != null)
                 listado = AportesBLL.GetList(c => c.Fecha.Date <= HastaDataPicker.SelectedDate);

@@ -8,14 +8,14 @@
         Title="cAportes" Height="572" Width="659">
     <Grid Margin="10,0,0,52" >
 
-        <StackPanel Orientation="Vertical" Margin="0,0,496,236">
+        <StackPanel Orientation="Vertical" Margin="0,0,479,365">
 
             <Label Content="Desde"  Width="42" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <DatePicker x:Name="DesdeDataPicker" Width="150" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"  />
+            <DatePicker x:Name="DesdeDatePicker" />
             <Label Content="Hasta" Height="28" VerticalAlignment="Top" Width="43" HorizontalAlignment="Left" />
-            <DatePicker x:Name="HastaDataPicker" Width="150"   Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <DatePicker x:Name="HastaDataPicker" />
         </StackPanel>
-        <StackPanel Margin="158,0,345,365">
+        <StackPanel Margin="189,0,293,341">
             <Label Content="Filtro" Width="41" HorizontalAlignment="Left" Height="24"/>
             <ComboBox x:Name="FiltroComBox" Width="142" Height="25" HorizontalAlignment="Left" Margin="0,5,0,0">
                 <ComboBoxItem Content="Persona"/>
@@ -24,7 +24,7 @@
             <Button x:Name="BuscarButton" Content="Buscar" Margin="0,23,0,0" Width="91" HorizontalAlignment="Center" Height="43" Click="BuscarButton_Click"/>
 
         </StackPanel>
-        <StackPanel Margin="309,6,204,430">
+        <StackPanel Margin="361,6,135,430">
             <Label Content="Criterio" Width="54" HorizontalAlignment="Left"/>
             <TextBox x:Name="CriterioTextBox"  Width="131" HorizontalAlignment="Left" Height="21"/>
         </StackPanel>
@@ -39,7 +39,7 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <StackPanel Orientation="Horizontal" Margin="14,437,322,35" >
+        <StackPanel Orientation="Horizontal" Margin="14,437,293,10" >
             <Label Content="Conteo: " VerticalAlignment="Top"/>
             <TextBox x:Name="ConteoTextBox"  Width="100" Height="26" VerticalAlignment="Top"/>
             <Label Content="Total: "/>
